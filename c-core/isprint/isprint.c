@@ -1,4 +1,4 @@
-int	isprint(int c)
+int	gm_isprint(int c)
 {
 	return (' ' <= c && c <= '~');
 }
