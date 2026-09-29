@@ -1,13 +1,15 @@
-char	*strcat(char *dst, const char *src)
+char	*gm_strcat(char *dst, const char *src)
 {
-	int i, j;
-	if (!src)
-		return (dst);
-	for (i = 0; dst[i]; i++) ;
-	for (j = 0; src[j]; i++, j++)
+	int i;
+	char *p = dst;
+	while (*p)
 	{
-		dst[i] = src[j];
+		p++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	for (i = 0; src[i]; i++)
+	{
+		p[i] = src[i];
+	}
+	p[i] = '\0';
+	return dst;
 }

@@ -1,41 +1,23 @@
-int is_sep(char c)
+int gm_atoi(const char *nptr)
 {
-	if (c == ' ' || (9 <= c && c <= 13))
-		return 1;
-	else
-		return 0;
-}
-
-int ft_numeric(char c)
-{
-	if ('0' <= c && c <= '9')
-		return 1;
-	else
-		return 0;
-}
-
-int atoi(const char *str)
-{
-	int i = 0;
 	int sum = 0;
 	int sign = 1;
 
-	while (is_sep(str[i]))
-		i++;
-	
-	if (str[i] == '+' || str[i] == '-')
+	while (*nptr == ' ' || (9 <= *nptr && *nptr <= 13))
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		nptr++;
 	}
-
-	while(ft_numeric(str[i]))
+	if (*nptr == '+' || *nptr == '-')
+	{
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
+	}
+	while ('0' <= *nptr && *nptr <= '9')
 	{
 		sum *= 10;
-		sum += str[i] - '0';
-		i++;
+		sum += *nptr - '0';
+		nptr++;
 	}
-
-	return (sign * sum);
+	return sum * sign;
 }
