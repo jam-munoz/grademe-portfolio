@@ -1,4 +1,5 @@
 #include <unistd.h>
+
 void	ft_putstr(char *str);
 int	ft_isalpha(int c);
 
@@ -10,14 +11,17 @@ int	main(int argc, char **argv)
 		return 0;
 	}
 	char *str = argv[1];
+	int i;
 
-	for (int i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
 		if (ft_isalpha(str[i]))
 		{
 			str[i] = str[i] + 1;
 			if (str[i] == '[' || str[i] == '{')
-				str[i] -= 26;
+			{
+				str[i] = str[i] - 26;
+			}
 		}
 	}
 	ft_putstr(str);
@@ -34,9 +38,7 @@ void	ft_putstr(char *str)
 	write(1, str, p - str);
 }
 
-
 int	ft_isalpha(int c)
 {
 	return (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'));
 }
-

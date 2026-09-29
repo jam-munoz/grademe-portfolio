@@ -8,11 +8,11 @@ int	main(int argc, char **argv)
 		printf("wrong number of arguments\n");
 		return 0;
 	}
-	char op = *argv[2];
 	int x = atoi(argv[1]);
 	int y = atoi(argv[3]);
-	int res;
-	switch (op)
+	int res = 0;
+
+	switch(*argv[2])
 	{
 		case '+': res = x + y;
 			break;
