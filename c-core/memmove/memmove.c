@@ -18,8 +18,8 @@ void	*gm_memmove(void *dst, const void *src, size_t n)
 	else
 		while (n > 0)
 		{
-			d[n - 1] = s[n - 1];
 			n--;
+			d[n] = s[n];
 		}
 	return dst;
 }
