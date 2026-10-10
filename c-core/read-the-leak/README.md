@@ -10,5 +10,6 @@ char *build_path(const char *dir, const char *name)
 **Allowed functions:** malloc, free
 
 Solved in practice.
+Validated 2 times. Earlier versions are in this file's git history.
 
 [Read the full exercise on Grademe](https://grademe.io/app/exercise/read-the-leak)
