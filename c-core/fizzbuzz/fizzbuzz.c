@@ -7,14 +7,13 @@ int	main(void)
 	for (int i = 1; i <= 100; i++)
 	{
 		if (i % 15 == 0)
-			ft_putstr("FizzBuzz");
+			ft_putstr("FizzBuzz\n");
 		else if (i % 5 == 0)
-			ft_putstr("Buzz");
+			ft_putstr("Buzz\n");
 		else if (i % 3 == 0)
-			ft_putstr("Fizz");
+			ft_putstr("Fizz\n");
 		else
 			ft_putnbr(i);
-		write(1, "\n", 1);
 	}
 }
 
@@ -32,7 +31,7 @@ void	ft_putstr(char *str)
 
 void ft_putnbr(int nb)
 {
-	char	buf[11];
+	char	buf[12];
 	int	 i;
 	long	n;
 
@@ -48,5 +47,6 @@ void ft_putnbr(int nb)
 	buf[--i] = n + '0';
 	if (nb < 0)
 		buf[--i] = '-';
-	write(1, buf + i, 11 - i);
+	buf[11] = '\n';
+	write(1, buf + i, 12 - i);
 }
